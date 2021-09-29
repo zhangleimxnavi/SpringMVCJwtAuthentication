@@ -1,0 +1,145 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.mxnavi.dubbo</groupId>
+  <artifactId>menu-provider</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+    
+     <properties>
+  		<spring-version>4.1.6.RELEASE</spring-version>
+		<mybatis-version>3.2.7</mybatis-version>
+		<mybatis-spring-version>1.2.3</mybatis-spring-version>
+		<log4j-version>1.2.17</log4j-version>
+		<mysql-version>5.1.38</mysql-version>
+		<aspectjweaver-version>1.8.6</aspectjweaver-version>
+ 	 </properties>
+
+  
+  
+  <dependencies>
+  
+  		<!-- JWT核心依赖 -->
+		<dependency>
+			<groupId>com.auth0</groupId>
+			<artifactId>java-jwt</artifactId>
+			<version>3.3.0</version>
+		</dependency>
+		<!-- java开发JWT的依赖jar包。 -->
+		<dependency>
+		    <groupId>io.jsonwebtoken</groupId>
+		    <artifactId>jjwt</artifactId>
+		    <version>0.9.0</version>
+		</dependency>
+		<!-- 给springmvc提供的响应扩展。@ResponseBody -->
+		<dependency>
+		    <groupId>com.fasterxml.jackson.core</groupId>
+		    <artifactId>jackson-databind</artifactId>
+		    <version>2.9.5</version>
+		</dependency>
+  
+  	<dependency>
+  		<groupId>com.mxnavi.dubbo</groupId>
+  		<artifactId>dubbo-menu-interface</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  
+  		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>dubbo</artifactId>
+			<version>2.5.3</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>spring</artifactId>
+					<groupId>org.springframework</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+	
+		<dependency>
+			<groupId>com.101tec</groupId>
+			<artifactId>zkclient</artifactId>
+			<version>0.10</version>
+		</dependency>
+	  	
+	  	<!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
+
+	  	<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-webmvc</artifactId>
+		    <version>${spring-version}</version>
+		</dependency>
+	  	
+	  	
+	  		<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-jdbc</artifactId>
+				<version>${spring-version}</version>
+			</dependency>
+	  	
+	  	
+	  	<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
+		<dependency>
+		    <groupId>org.mybatis</groupId>
+		    <artifactId>mybatis</artifactId>
+		    <version>${mybatis-version}</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis-spring -->
+		<dependency>
+		    <groupId>org.mybatis</groupId>
+		    <artifactId>mybatis-spring</artifactId>
+		    <version>${mybatis-spring-version}</version>
+		</dependency>
+	
+		
+		<!-- https://mvnrepository.com/artifact/log4j/log4j -->
+		<dependency>
+		    <groupId>log4j</groupId>
+		    <artifactId>log4j</artifactId>
+		    <version>${log4j-version}</version>
+		</dependency>
+		
+		
+		
+		<dependency>
+		    <groupId>mysql</groupId>
+		    <artifactId>mysql-connector-java</artifactId>
+		    <version>${mysql-version}</version>
+		</dependency>
+	
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>${aspectjweaver-version}</version>
+		</dependency>
+		
+		
+		
+	  </dependencies>
+
+  
+  
+	<build>	
+		<resources>
+			<resource>
+				<directory>src/main/java</directory>
+				<includes>
+					<include>**/*.xml</include>	
+				</includes>
+			</resource>
+		
+			<resource>
+				<directory>src/main/resources</directory>
+				<includes>
+					<include>**/*.xml</include>	
+					<include>**/*.properties</include>	
+				</includes>
+			</resource>
+		</resources>
+
+	</build>
+  
+</project>
+
+
+

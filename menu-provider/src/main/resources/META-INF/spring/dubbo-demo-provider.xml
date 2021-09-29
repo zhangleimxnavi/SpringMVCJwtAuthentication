@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context.xsd
+		http://code.alibabatech.com/schema/dubbo 
+		http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+	
+
+
+    <!-- provider's application name, used for tracing dependency relationship -->
+    <dubbo:application name="menu-provider"/>
+    <!-- use multicast registry center to export service -->
+    <dubbo:registry protocol="zookeeper" address="192.168.3.35:2181"></dubbo:registry>
+    <!-- use dubbo protocol to export service on port 20880 -->
+    <dubbo:protocol name="dubbo" port="20880"/>
+    <!-- service implementation, as same as regular local bean -->
+    <bean id="menuService" class="com.mxnavi.dubbo.provider.DubboMenuServiceImpl"/>
+    <!-- declare the service interface to be exported -->
+    <dubbo:service interface="com.mxnavi.dubbo.DubboMenuService" ref="menuService"/>
+        
+        
+    <import resource="../../ApplicationContext-Spring.xml"/>
+    
+</beans>

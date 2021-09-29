@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mxnavi.mapper.MenuMapper">
+	
+	
+	<resultMap type="Menu" id="menuMap">
+		<id column="id" property="id"/>
+		<result column="name" property="name"/>
+		<result column="parentid" property="pid"/>
+		<association property="parent" select="com.mxnavi.mapper.MenuMapper.selById" column="parentid"></association>
+		<collection property="childrens" select="com.mxnavi.mapper.MenuMapper.selByPid" column="id"></collection>	
+	</resultMap>
+	
+	<select id="selAll" resultMap="menuMap">
+		select * from menu
+	</select>
+
+
+	<select id="selById" parameterType="int" resultType="Menu">
+		select * from menu where id = #{0}
+	</select>
+
+	<select id="selByPid" parameterType="int" resultType="Menu">
+		select * from menu where parentid = #{0}
+	</select>
+	
+	
+	<update id="updByIdAndName">
+		update menu set name=#{name},parentid=#{pid} where id=#{id}
+	</update>
+	
+	
+	
+</mapper>
