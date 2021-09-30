@@ -1,6 +1,0 @@
-DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2021-07-23 17:00:32 139 - ==>  Preparing: select * from people 
-DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2021-07-23 17:00:32 139 - ==> Parameters: 
-DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2021-07-23 17:00:32 139 - <==      Total: 4
-DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2021-07-23 22:50:11 139 - ==>  Preparing: select * from people 
-DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2021-07-23 22:50:11 139 - ==> Parameters: 
-DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 2021-07-23 22:50:11 139 - <==      Total: 4
